@@ -1,0 +1,9 @@
+.env
+.idea/
+node_modules/
+npm-debug.log
+deploy.*
+deploy-front-end.*
+errorLogs/
+requestsLogs/
+query.js
