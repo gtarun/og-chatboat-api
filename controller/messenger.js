@@ -45,5 +45,5 @@ module.exports = {
             console.log('Page Id: ', pageId);
             console.log('Access Token: ', accessToken);
         }
-    }
+    },
 }

@@ -2,6 +2,7 @@ var express = require('express');
 var path = require('path');
 var logger = require('morgan');
 var router = require('./routes/router');
+const main = require('./controller/base');
 
 var app = express();
 
@@ -14,13 +15,15 @@ app.set('view engine', 'jade');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 
+app.get('/', main.index);
 app.use('/api/v1', router);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
+	return res.status(404).json({
+            success: false,
+            error: 'Not Found'
+    });
 });
 
 // error handler
