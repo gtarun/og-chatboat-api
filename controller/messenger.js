@@ -35,6 +35,7 @@ module.exports = {
     },
 
     pageInfo: (req, res) => {
+        console.log('===========', req.body);
         if (!req.body) res.status(422).send({ status: 422, err: 'Data Required' })
         else {
             pageId = req.body.pageId;

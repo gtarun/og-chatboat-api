@@ -2,8 +2,11 @@ const router = require('express').Router();
 const messenger = require('../controller/messenger');
 const main = require('../controller/base');
 const cors = require('cors');
+const bodyparser = require('body-parser');
 
-router.use(cors());
+router.use(bodyparser.json());
+
+//router.use(cors());
 
 router.get('/', main.index);
 router.get('/messenger/userwebhook', messenger.webhookVerify);
